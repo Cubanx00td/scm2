@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en" th:replace="~{base::parent(~{::#content}, ~{::title}, ~{::script})}">
+<head>
+    <title data-th-text="${loggedInUser.name} + ' | Profile'">Contact</title>
+</head>
+<body>
+    <div id="content">
+        <!-- sidebar -->
+        <div data-th-if="${loggedInUser}">
+            <div data-th-replace="~{user/sidebar::sidebar}"></div>
+        </div>
+
+        <div class="grid grid-cols-12">
+            <div class="col-span-2 md:col-span-2 lg:col-span-4 xl:col-span-3"></div>
+            
+            <div class="col-span-12 md:col-span-10 lg:col-span-8 xl:col-span-9">
+                <div class=" sm:pl-64 pt-20 max-w-3xl text-center ">
+
+                    <!-- Modal content -->
+                    <div class=" bg-white rounded-lg shadow dark:bg-gray-700 text-center justify-center">
+
+                        
+                            
+                            
+                            
+                            
+                        </div>
+                        <!-- Modal body -->
+                        <div class=" p-4 md:p-5 space-y-4 border-t-8 bg-white border-blue-600 rounded-lg shadow  dark:bg-gray-800 dark:border-blue-400">
+                            <h2 class="flex text-center text-2xl mb-10">Profile Detail</h2>
+                            <div class="flex justify-center text-center">
+                                <img id="contact_photo" class=" w-40 h-40 rounded-full border-x-2 border-y-2 border-black justify-center"
+                                onerror="this.src='https://freesvg.org/img/abstract-user-flat-4.png'" data-th-src="@{${loggedInUser.profilePic}}" alt="Jese image" >
+                            </div>
+
+                            <div class=" pl-5 inline-block">
+                                <p class="text-4xl "><span data-th-text ="${loggedInUser.name}" class="leading-relaxed text-gray-900 dark:text-white"></span></p>
+                                <p>Email: <span id="contact_email" data-th-text="${loggedInUser.email}" 
+                                class="text-base leading-relaxed font-bold text-gray-900 dark:text-white"></span></p>
+                                <p>Phone Number: <span 
+                                id="contact_phoneNumber" data-th-text="${loggedInUser.phoneNumber}" class="text-base leading-relaxed font-bold text-gray-900 dark:text-white">
+                                </span></p>
+                                
+                                <p>About: <span id="contact_des" data-th-text="${loggedInUser.about}" class="text-base leading-relaxed font-bold text-gray-900 dark:text-white">
+                                </span></p>
+
+                                <p>Email Verified: <span id="contact_des" data-th-text="${loggedInUser.emailVerified?'Yes' : 'No'}" class="text-base leading-relaxed font-bold text-gray-900 dark:text-white">
+                                </span></p>
+
+                                <p>Phone Verified: <span id="contact_des" data-th-text="${loggedInUser.phoneVerified?'Yes' : 'No'}" class="text-base leading-relaxed font-bold text-gray-900 dark:text-white">
+                                </span></p>
+
+                            
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+                
+        
+    </div>
+
+    <script>
+        console.log("profile page");
+    </script>
+    
+</body>
+</html>

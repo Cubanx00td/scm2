@@ -1,0 +1,20 @@
+npm init -y
+npm install -D tailwindcss
+npx tailwindcss init
+npx tailwindcss -i .\src\main\resources\static\css\input.css -o src/main/resources/static/css/output.css --watch
+
+include output.css in html file
+
+for flowbite: include css and javascript using cdn
+
+google
+clientid:
+174236664351-c8hji2fpem4r9rrcdjrr00kdg28bdadq.apps.googleusercontent.com
+client secret:
+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
+
+github
+clientid
+Iv23litN9tgMy0YE5kh9
+client secret
+6e7500ea5287a1efc9f28db258311abb5b789f98

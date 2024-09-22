@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" th:replace="~{base::parent(~{::#content}, ~{::title}, ~{::script})}">
+<head>
+    <title data-th-text="${loggedInUser.name} + ' | Feedback'">Contact</title>
+</head>
+<body>
+    <div id="content">
+        <!-- sidebar -->
+        <div data-th-if="${loggedInUser}">
+            <div data-th-replace="~{user/sidebar::sidebar}"></div>
+        </div>
+
+        <div class="sm:pl-64 pt-20 text-center">
+
+            <p class="text-2xl">Send your valuable feedback at info@smartcontactmanager.com</p>
+        </div>
+
+                
+        
+    </div>
+
+    <script>
+        console.log("profile page");
+    </script>
+    
+</body>
+</html>

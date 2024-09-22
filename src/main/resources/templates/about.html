@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" th:replace="~{base::parent(~{::#content}, ~{::title}, ~{::script})}">
+<head>
+    <title>About</title>
+</head>
+<body>
+    <div id="content">
+        <!-- sidebar -->
+        <div data-th-if="${loggedInUser}">
+            <div data-th-replace="~{user/sidebar::sidebar}"></div>
+        </div>
+        <div data-th-if="${loggedInUser}" class=" sm:pl-64 pt-20 text-center ">
+            <div class="mt-12">
+                <h1 class="text-3xl">About</h1>
+            </div>
+            <div class="mt-10 m-10 text-xl text-center">
+                <p>Project Originally developed by Durgesh Tiwari
+                </p>
+            </div>
+                
+
+            <div class="mt-5 text-xl text-center">
+                <a class="mt-10" href="www.youtube.com/playlist?list=PL0zysOflRCemNS641tpw66bcaFylyIGsA">www.youtube.com/playlist?list=PL0zysOflRCemNS641tpw66bcaFylyIGsA</a>
+            </div>
+                
+           
+        </div>
+            
+        <div data-th-unless="${loggedInUser}" class="text-center">
+            <div class="mt-12">
+                <h1 class="text-3xl">About</h1>
+                
+            </div>
+            <div class="mt-10 m-10 text-xl text-center">
+                <p>Project Originally developed by Durgesh Tiwari
+                </p>
+            </div>
+
+            <div class="mt-5 text-xl text-center">
+                <a class="mt-10" href="www.youtube.com/playlist?list=PL0zysOflRCemNS641tpw66bcaFylyIGsA">www.youtube.com/playlist?list=PL0zysOflRCemNS641tpw66bcaFylyIGsA</a>
+            </div>
+            
+
+           
+            
+            <div class="mt-10">
+                <a data-th-unless="${loggedInUser}" data-th-href="@{/login}" type="button" class="m-2 text-white bg-gray-700 hover:bg-gray-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Login</a>
+                <p class="flex-inline">OR</p>
+                <a data-th-href="@{/register}" type="button" class="m-2 text-white bg-gray-700 hover:bg-gray-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center dark:bg-gray-600 dark:hover:bg-gray-700 dark:focus:ring-gray-800">Register</a>
+            </div>
+        </div>
+    
+    
+    </div>
+
+    <script>
+        console.log("about page");
+    </script>
+    <script>
+        console.log("second script about page");
+    </script>
+</body>
+</html>

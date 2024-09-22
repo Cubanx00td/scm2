@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en" th:replace="~{base::parent(~{::#content}, ~{::title}, ~{})}">
+<head>
+    
+    <title>Home</title>
+</head>
+<body>
+    <section id="content">
+        
+        <!-- sidebar -->
+        <div data-th-if="${loggedInUser}">
+            <div data-th-replace="~{user/sidebar::sidebar}"></div>
+        </div>
+        <div data-th-if="${loggedInUser}" class=" sm:pl-64 pt-20 text-center ">
+            <div class="mt-12">
+                <h1 class="text-3xl">Welcome to Smart Contact Manager</h1>
+                <h2 class="text-2xl mt-5">A Cloud contact management system</h2>
+            </div>
+            <div class="mt-10 m-20 text-left">
+                <p>Technologies used: Java, Spring Boot, JavaScript, MySQL
+                    Deployed using Amazon web services.
+                </p>
+                <p class="mt-8">
+                    Features:
+                    
+                        <ul style="list-style-type: circle">
+                            <li>
+                                Supports CRUD operations for contacts.
+                            </li>
+                            <li>
+                                Image upload using cloudinary.
+                            </li>
+                            <li>
+                                Secure login using Spring security.
+                            </li>
+                            <li>
+                                Supports signin with google and github using OAuth2.
+                            </li>
+                            <li>
+                                Email verification for additional authentification.
+                            </li>
+                        </ul>    
+                </p>
+
+            </div>
+            
+        </div>
+            
+        <div data-th-unless="${loggedInUser}" class="text-center">
+            <div class="mt-12">
+                <h1 class="text-3xl">Welcome to Smart Contact Manager</h1>
+                <h2 class="text-2xl mt-5">A Cloud contact management system</h2>
+            </div>
+            <div class="mt-10 m-20 text-left">
+                <p>Technologies used: Java, Spring Boot, JavaScript, MySQL
+                    Deployed using Amazon web services.
+                </p>
+                <p class="mt-8">
+                    Features:
+                    
+                        <ul style="list-style-type: circle">
+                            <li>
+                                Supports CRUD operations for contacts.
+                            </li>
+                            <li>
+                                Image upload using cloudinary.
+                            </li>
+                            <li>
+                                Secure login using Spring security.
+                            </li>
+                            <li>
+                                Supports signin with google and github using OAuth2.
+                            </li>
+                            <li>
+                                Email verification for additional authentification.
+                            </li>
+                        </ul>    
+                </p>
+            </div>
+
+            <div class="text-2xl m-5"></div>
+                <p class="font-bold">Demo account for testing:</p>
+                <p>Username: admin@gmail.com</p>
+                <p>Password: admin123</p>
+            
+            <div class="text-center mt-5">
+                <p>
+                    Ready to begin? 
+                </p>
+                
+                <div class="mt-10">
+                    <a data-th-unless="${loggedInUser}" data-th-href="@{/login}" type="button" class="m-2 text-white bg-gray-700 hover:bg-gray-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Login</a>
+                    <p class="flex-inline">OR</p>
+                    <a data-th-href="@{/register}" type="button" class="m-2 text-white bg-gray-700 hover:bg-gray-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center dark:bg-gray-600 dark:hover:bg-gray-700 dark:focus:ring-gray-800">Register</a>
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+    <script>
+        console.log("home page");
+    </script>
+</body>
+</html>
