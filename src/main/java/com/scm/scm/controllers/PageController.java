@@ -114,13 +114,11 @@ public class PageController {
         user.setProfilePic("https://imgs.search.brave.com/GbCdC7mgiFvBTu6bnsfQAypLsf3LDOm17CYHzGNSpyA/rs:fit:500:0:0/g:ce/aHR0cHM6Ly93d3cu/cG5naXRlbS5jb20v/cGltZ3MvbS8yMi0y/MjM5NjhfZGVmYXVs/dC1wcm9maWxlLXBp/Y3R1cmUtY2lyY2xl/LWhkLXBuZy1kb3du/bG9hZC5wbmc");
         user.setEnabled(false);
   
-
         User savedUser = userService.saveUser(user);
         System.out.println("User Saved");
 
         //message 
         Message message = Message.builder().content("Registration Successful. \n A verification link has been sent to the provided email.").type(MessageType.green).build();
-
 
         redirectAttributes.addFlashAttribute("message", message);
         

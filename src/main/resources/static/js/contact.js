@@ -1,7 +1,7 @@
 console.log("Contact.js")
 // const baseUrl = "http://localhost:8080"
 // const baseUrl = "http://scm2.us-east-1.elasticbeanstalk.com "
-const baseUrl = "http://scm20.us-east-1.elasticbeanstalk.com"
+const baseUrl = "https://scm2-production.up.railway.app"
 
 const viewContactModal=document.getElementById('view_contact_modal');
 
