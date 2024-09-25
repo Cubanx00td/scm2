@@ -11,7 +11,7 @@ import org.springframework.stereotype.Component;
 public class Helper {
 
     @Value("${server.baseUrl}")
-    private static String baseUrl;
+    private String baseUrl;
     
     public static String getEmailOfLoggedInUser(Authentication authentication){
 
@@ -45,8 +45,8 @@ public class Helper {
         }
     }
 
-    public static String getEmailVerificationLink(String emailToken){
-        String link = baseUrl + "/auth/verify-email?token=" + emailToken;
+    public String getEmailVerificationLink(String emailToken){
+        String link = this.baseUrl + "/auth/verify-email?token=" + emailToken;
         return link;
     }
 }

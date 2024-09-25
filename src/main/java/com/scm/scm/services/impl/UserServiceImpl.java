@@ -33,6 +33,9 @@ public class UserServiceImpl implements UserService {
     @Autowired
     private EmailService emailService;
 
+    @Autowired
+    private Helper helper;
+
 
     @Override
     public com.scm.scm.entities.User saveUser(com.scm.scm.entities.User user) {
@@ -45,7 +48,7 @@ public class UserServiceImpl implements UserService {
         user.setEmailToken(emailToken);
 
         User savedUser = userRepo.save(user);
-        String emailLink = Helper.getEmailVerificationLink(emailToken);
+        String emailLink = helper.getEmailVerificationLink(emailToken);
         emailService.sendEmail(savedUser.getEmail(), "Verify Your Email - Smart Contact Manager", emailLink);
 
         return savedUser;
